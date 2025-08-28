@@ -1,18 +1,42 @@
-## Getting Started
+# Scribble App
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This repository contains a very small Java Swing application that provides a
+simple sketchpad for free‑hand drawing.  The user can click and drag the mouse
+to draw continuous strokes on a blank canvas.  A **Reset** button clears
+everything, returning the pad to its initial blank state.
 
-## Folder Structure
+## Features
 
-The workspace contains two folders by default, where:
+* **Free‑hand drawing:** click and drag to draw smooth lines on the canvas.
+* **Reset button:** quickly erase all your strokes and start over.
+* **Resizable window:** the drawing area adjusts itself when you resize the
+  window.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+This project does not rely on any external libraries; it is built entirely
+with standard Java (`javax.swing` and `java.awt`) classes, so it will run on
+any system with a Java Runtime Environment (JRE) installed.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## How to build and run
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+You can compile and run the application from the command line using the
+standard Java compiler (`javac`).  The following commands assume you have
+Java 17 or later on your `PATH`.
 
-## Dependency Management
+```sh
+# Navigate into the project directory
+cd scribble-app
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+# Compile the source file (classes will be placed in the current directory)
+javac -d out src/ScribbleApp.java
+
+# Run the application using the compiled class files
+java -cp out ScribbleApp
+```
+
+Alternatively, you can open the project in your favourite IDE (VS Code,
+IntelliJ IDEA, Eclipse, etc.) and run it directly as a Java application.
+To do this you should mark the `src` folder as the source directory and make
+sure the IDE is configured with a compatible Java SDK (e.g. Java 17 or later).
+
+When the window appears you can begin drawing immediately.  To clear the
+canvas at any time, click the **Reset** button at the bottom of the window.
